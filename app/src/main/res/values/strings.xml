@@ -2,5 +2,5 @@
     <string name="app_name">MindRises</string>
     <string name="math_title">Math</string>
     <string name="iq_title">IQ</string>
-    <string name="problems_title">Problems</string>
+    <string name="puzzle_title">Puzzle</string>
 </resources>

@@ -8,19 +8,19 @@ import androidx.fragment.app.FragmentPagerAdapter
 private val TAB_TITLES = arrayOf(
     R.string.math_title,
     R.string.iq_title,
-    R.string.problems_title
+    R.string.puzzle_title
 )
 
 
 class PagerAdapter(private val context: Context, fm: FragmentManager) :
-    FragmentPagerAdapter(fm) {
+    FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     override fun getItem(position: Int): Fragment {
 
         return when(position) {
-            1 -> MathFragment()
-            2 -> IQFragment()
-            3 -> ProblemsFragment()
+            0 -> MathFragment()
+            1 -> IQFragment()
+            2 -> PuzzleFragment()
             else -> Fragment()
         }
     }

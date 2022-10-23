@@ -19,13 +19,8 @@ class MathFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_math, container, false)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MathViewModel::class.java)
-        // TODO: Use the ViewModel
+        return inflater.inflate(R.layout.fragment_math, container, false)
     }
 
 }
