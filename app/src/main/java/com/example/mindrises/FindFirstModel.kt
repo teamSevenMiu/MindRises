@@ -4,8 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class FindFirstModel:ViewModel() {
-    private var questions=ArrayList<QuestionFindFirst>(arrayListOf(QuestionFindFirst("1","2","3","4",
-    "5","6","7","8","5"),
+    private var questions=ArrayList<QuestionFindFirst>(arrayListOf(QuestionFindFirst("11","112","113","114",
+    "115","116","117","118","115"),
         QuestionFindFirst("3","4","5","6",
             "7","8","9","10","7"),
         QuestionFindFirst("13","14","15","16",
