@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/magic_nav"
+app:startDestination="@id/MagicFirstFragment">
+
+<fragment
+    android:id="@+id/MagicFirstFragment"
+    android:name="com.example.mindrises.MagicFirstFragment"
+    android:label="@string/title_activity_magic"
+    tools:layout="@layout/fragment_magic_first">
+
+    <action
+        android:id="@+id/action_magic_first_second"
+        app:destination="@id/MagicSecondFragment"
+        app:enterAnim="@anim/nav_default_pop_enter_anim"
+        app:exitAnim="@anim/nav_default_pop_exit_anim">
+
+        <argument
+            android:name="size"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </action>
+
+</fragment>
+<fragment
+    android:id="@+id/MagicSecondFragment"
+    android:name="com.example.mindrises.MagicSecondFragment"
+    android:label="@string/title_activity_magic"
+    tools:layout="@layout/fragment_magic_second">
+
+
+
+    <action
+        android:id="@+id/action_magic_second_first"
+        app:destination="@id/MagicFirstFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim" />
+
+</fragment>
+</navigation>

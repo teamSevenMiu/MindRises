@@ -1,5 +1,7 @@
 package com.example.mindrises
 
+import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -30,7 +32,7 @@ class PuzzleFragment : Fragment() {
 
         _binding = FragmentPuzzleBinding.inflate(inflater, container, false)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.adapter = PuzzleAdapter(viewModel.items.value ?: ArrayList())
+        binding.recyclerView.adapter = PuzzleAdapter(requireContext(), viewModel.items.value ?: ArrayList())
 
         return binding.root
     }
@@ -42,7 +44,7 @@ class PuzzleFragment : Fragment() {
 
 }
 
-class PuzzleAdapter(var list: ArrayList<PuzzleItem>) : RecyclerView.Adapter<PuzzleAdapter.MyViewHolder>() {
+class PuzzleAdapter(var context: Context,var list: ArrayList<PuzzleItem>) : RecyclerView.Adapter<PuzzleAdapter.MyViewHolder>() {
 
     private lateinit var binding: ItemPuzzleBinding
 
@@ -57,6 +59,22 @@ class PuzzleAdapter(var list: ArrayList<PuzzleItem>) : RecyclerView.Adapter<Puzz
     override fun onBindViewHolder(holder: PuzzleAdapter.MyViewHolder, position: Int) {
         binding.title.text = list[position].name
         binding.image.setImageResource(list[position].image)
+
+
+
+        holder.itemView.setOnClickListener {
+
+            if (position == 0){
+               val intent = Intent(context,MagicActivity::class.java)
+               context.startActivity(intent)
+            }
+
+            if (position == 1){
+                val intent = Intent(context,JigsawActivity::class.java)
+                context.startActivity(intent)
+            }
+
+        }
     }
 
     override fun getItemCount() = list.size

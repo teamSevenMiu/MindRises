@@ -8,10 +8,28 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.MindRises"
         tools:targetApi="31">
+        <activity
+            android:name=".JigsawActivity"
+            android:exported="false"
+            android:label="@string/title_activity_jigsaw"
+            android:theme="@style/Theme.MindRises.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MagicActivity"
+            android:exported="false"
+            android:label="@string/title_activity_magic"
+            android:theme="@style/Theme.MindRises.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jigsaw_nav"
+    app:startDestination="@id/JigsawFirstFragment">
+
+    <fragment
+        android:id="@+id/JigsawFirstFragment"
+        android:name="com.example.mindrises.JigsawFirstFragment"
+        android:label="@string/title_activity_jigsaw"
+        tools:layout="@layout/fragment_jigsaw_first">
+
+        <action
+            android:id="@+id/action_jigsaw_first_second"
+            app:destination="@id/JigsawSecondFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim">
+
+            <argument
+            android:name="asset"
+            app:argType="string"
+            android:defaultValue="jigsaw1.jpg" />
+      </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/JigsawSecondFragment"
+        android:name="com.example.mindrises.JigsawSecondFragment"
+        android:label="@string/title_activity_jigsaw"
+        tools:layout="@layout/fragment_jigsaw_second">
+
+
+
+        <action
+            android:id="@+id/action_jigsaw_second_first"
+            app:destination="@id/JigsawFirstFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+
+    </fragment>
+</navigation>
