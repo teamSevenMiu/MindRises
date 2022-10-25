@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FindWordActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/letter1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="10dp"
+            android:text="S"
+            android:onClick="selectChar"
+            android:textSize="@dimen/t_size2"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:id="@+id/letter2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="10dp"
+            android:text="B"
+            android:onClick="selectChar"
+            android:textSize="@dimen/t_size2"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:id="@+id/letter3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="10dp"
+            android:text="L"
+            android:onClick="selectChar"
+            android:textSize="@dimen/t_size2"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:id="@+id/letter4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="10dp"
+            android:text="E"
+            android:onClick="selectChar"
+            android:textSize="@dimen/t_size2"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:id="@+id/letter5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="10dp"
+            android:text="O"
+            android:onClick="selectChar"
+            android:textSize="@dimen/t_size2"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:id="@+id/letter6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="10dp"
+            android:text="U"
+            android:onClick="selectChar"
+            android:textSize="@dimen/t_size2"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:id="@+id/letter7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:text="T"
+            android:onClick="selectChar"
+            android:textSize="@dimen/t_size2"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:id="@+id/letter8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:text="A"
+            android:onClick="selectChar"
+            android:textSize="@dimen/t_size2"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <ImageButton
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="retry"
+            app:srcCompat="@drawable/refresh" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/selected_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="128dp"
+        android:text="ABSOLUTE"
+        android:textSize="@dimen/t_size4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
