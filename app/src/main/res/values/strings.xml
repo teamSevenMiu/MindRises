@@ -4,5 +4,7 @@
     <string name="iq_title">IQ</string>
     <string name="puzzle_title">Puzzle</string>
     <string name="title_activity_magic">Magic Square</string>
-
+    <string name="title_activity_jigsaw">Jigsaw Puzzle</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 </resources>

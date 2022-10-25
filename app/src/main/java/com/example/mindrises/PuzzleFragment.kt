@@ -63,10 +63,17 @@ class PuzzleAdapter(var context: Context,var list: ArrayList<PuzzleItem>) : Recy
 
 
         holder.itemView.setOnClickListener {
-           if (position == 0){
+
+            if (position == 0){
                val intent = Intent(context,MagicActivity::class.java)
                context.startActivity(intent)
-           }
+            }
+
+            if (position == 1){
+                val intent = Intent(context,JigsawActivity::class.java)
+                context.startActivity(intent)
+            }
+
         }
     }
 

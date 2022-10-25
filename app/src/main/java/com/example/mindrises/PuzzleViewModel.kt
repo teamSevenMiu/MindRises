@@ -14,7 +14,6 @@ class PuzzleViewModel : ViewModel() {
         val list = ArrayList<PuzzleItem>()
         list.add(PuzzleItem("Magic Square",R.drawable.magic_square))
         list.add(PuzzleItem("Jigsaw",R.drawable.jigsaw))
-        list.add(PuzzleItem("Dots",R.drawable.dot))
         items.value = list
     }
 }
