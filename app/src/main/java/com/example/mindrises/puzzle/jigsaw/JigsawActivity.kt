@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.puzzle.jigsaw
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
