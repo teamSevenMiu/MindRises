@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.puzzle.magic
 
 import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.mindrises.databinding.FragmentMagicSecondBinding
+import com.example.mindrises.main.Presets
 import com.google.android.material.snackbar.Snackbar
 import java.util.ArrayList
 
@@ -31,6 +32,8 @@ class MagicSecondFragment : Fragment() {
         viewModel.matrixSize = size
         _binding = FragmentMagicSecondBinding.inflate(inflater, container, false)
 
+
+        binding.konfettiView.start(Presets.rain())
 
         initGame()
 

@@ -1,11 +1,11 @@
-package com.example.mindrises
+package com.example.mindrises.puzzle.jigsaw
 
-import android.content.Context
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import android.widget.RelativeLayout
+import com.example.mindrises.puzzle.jigsaw.JigsawPiece
 import kotlin.math.abs
 
 

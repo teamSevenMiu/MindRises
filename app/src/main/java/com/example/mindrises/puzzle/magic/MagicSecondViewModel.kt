@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.puzzle.magic
 
 import android.content.res.Resources
 import androidx.lifecycle.ViewModel
@@ -39,7 +39,7 @@ class MagicSecondViewModel : ViewModel() {
     }
 
 
-    fun move(current: MagicPosition,target:MagicPosition) : Boolean {
+    fun move(current: MagicPosition, target: MagicPosition) : Boolean {
 
         val neighbours =
             MagicPosition(

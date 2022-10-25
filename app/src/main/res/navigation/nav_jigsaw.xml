@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/JigsawSecondFragment"
-        android:name="com.example.mindrises.JigsawSecondFragment"
+        android:name="com.example.mindrises.puzzle.jigsaw.JigsawSecondFragment"
         android:label="@string/title_activity_jigsaw"
         tools:layout="@layout/fragment_jigsaw_second">
 
