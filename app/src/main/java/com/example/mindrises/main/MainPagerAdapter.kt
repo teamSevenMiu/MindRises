@@ -12,7 +12,7 @@ private val TAB_TITLES = arrayOf(
 )
 
 
-class PagerAdapter(private val context: Context, fm: FragmentManager) :
+class MainPagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     override fun getItem(position: Int): Fragment {

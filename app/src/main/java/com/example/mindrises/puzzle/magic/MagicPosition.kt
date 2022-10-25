@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.puzzle.magic
 
 
 class MagicPosition(var x: Float, var y: Float, var id:Int = 0) {
