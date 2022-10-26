@@ -10,7 +10,7 @@
     android:paddingRight="20dp"
     android:paddingTop="20dp"
     android:paddingBottom="20dp"
-    tools:context=".Math3Level">
+    tools:context=".math.Math3Level">
 
     <TextView
         android:id="@+id/textView6"

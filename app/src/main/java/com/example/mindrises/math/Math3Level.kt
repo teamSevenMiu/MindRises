@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.math
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.example.mindrises.R
 import kotlinx.android.synthetic.main.activity_math1_level.*
 import kotlinx.android.synthetic.main.activity_math3_level.mg1
 import kotlinx.android.synthetic.main.activity_math3_level.mg2
@@ -66,7 +67,7 @@ class Math3Level : AppCompatActivity() {
         }
     }
     private fun showMath3(from:Int,to:Int,tTime:Long,numberQ:Int){
-        val intent= Intent(this,Math3::class.java)
+        val intent= Intent(this, Math3::class.java)
         intent.putExtra("from",from)
         intent.putExtra("to",to)
         intent.putExtra("tTime",tTime)

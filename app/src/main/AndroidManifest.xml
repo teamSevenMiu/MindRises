@@ -13,56 +13,56 @@
         android:theme="@style/Theme.MindRises"
         tools:targetApi="31">
         <activity
-            android:name=".Math1DetailActivity"
+            android:name=".math.Math1DetailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Math1Result"
+            android:name=".math.Math1Result"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Math3Level"
+            android:name=".math.Math3Level"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Math3"
+            android:name=".math.Math3"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Math1Level"
+            android:name=".math.Math1Level"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Math1"
+            android:name=".math.Math1"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Math2Level"
+            android:name=".math.Math2Level"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Math2"
+            android:name=".math.Math2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

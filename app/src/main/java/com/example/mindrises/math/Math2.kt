@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.math
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
+import com.example.mindrises.R
 import kotlinx.android.synthetic.main.activity_math2.btn1
 import kotlinx.android.synthetic.main.activity_math2.btn2
 import kotlinx.android.synthetic.main.activity_math2.button2
@@ -48,7 +49,7 @@ class Math2 : AppCompatActivity() {
         setButtonColor()
         getSomeTime(tTime)
         button2.setOnClickListener(){
-            val intent= Intent(this,Math2Level::class.java)
+            val intent= Intent(this, Math2Level::class.java)
             this.startActivity(intent)
             finish()
         }
@@ -184,11 +185,11 @@ class Math2 : AppCompatActivity() {
     }
     //val answer: String, val correct: String,val image:Int
     private fun saveData(answer:String,correct:String,image:Int){
-        val x=MathClass1(answer,correct,image)
+        val x= MathClass1(answer,correct,image)
         userResult.add(x)
     }
     private fun startReport(){
-        val intent=Intent(this,Math1Result::class.java)
+        val intent=Intent(this, Math1Result::class.java)
         val args = Bundle()
         args.putSerializable("userResult", userResult)
         intent.putExtra("BUNDLE", args)

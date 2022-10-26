@@ -1,9 +1,11 @@
-package com.example.mindrises
+package com.example.mindrises.math
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mindrises.R
+import com.example.mindrises.main.Presets
 import kotlinx.android.synthetic.main.activity_math1_result.*
 
 class Math1Result : AppCompatActivity() {
@@ -18,5 +20,7 @@ class Math1Result : AppCompatActivity() {
         val adapter = MyAdapter(this,temp)
         // Set adapter to your RecyclerView
         recyclerView1.adapter = adapter
+
+        konfettiView.start(Presets.rain())
     }
 }

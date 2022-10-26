@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mindrises.databinding.FragmentMathBinding
 import com.example.mindrises.databinding.ItemPuzzleBinding
+import com.example.mindrises.math.Math1Level
+import com.example.mindrises.math.Math2Level
+import com.example.mindrises.math.Math3Level
 
 
 class MathFragment : Fragment() {
@@ -66,12 +69,12 @@ class MathAdapter(var context: Context, var list: ArrayList<PuzzleItem>) : Recyc
         holder.itemView.setOnClickListener {
 
             if (position == 0){
-                val intent = Intent(context,Math1Level::class.java)
+                val intent = Intent(context, Math1Level::class.java)
                 context.startActivity(intent)
             }
 
             if (position == 1){
-                val intent = Intent(context,Math2Level::class.java)
+                val intent = Intent(context, Math2Level::class.java)
                 context.startActivity(intent)
             }
             if (position == 2){

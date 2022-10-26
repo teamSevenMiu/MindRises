@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Math2">
+    tools:context=".math.Math2">
     <TextView
         android:id="@+id/txt1"
         android:layout_width="404dp"
@@ -41,8 +41,9 @@
         android:text="False"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt1"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
 
+        app:layout_constraintTop_toTopOf="@+id/txt1"
         app:rippleColor="#9A1313" />
 
     <TextView
@@ -63,14 +64,15 @@
         android:layout_height="80sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
-        android:textColor="#0DD315"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="23dp"
         android:gravity="center"
         android:text=""
+        android:textColor="#0DD315"
         android:textSize="40sp"
         android:textStyle="bold"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtWrong"
@@ -78,14 +80,13 @@
         android:layout_height="80sp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
-        android:textColor="#F40404"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
         android:text=""
+        android:textColor="#F40404"
         android:textSize="40sp"
         android:textStyle="bold"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"

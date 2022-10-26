@@ -1,7 +1,8 @@
-package com.example.mindrises
+package com.example.mindrises.math
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mindrises.R
 import kotlinx.android.synthetic.main.activity_math1_detail.*
 
 class Math1DetailActivity : AppCompatActivity() {

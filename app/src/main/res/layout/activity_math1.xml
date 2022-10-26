@@ -4,117 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Math1">
+    tools:context=".math.Math1">
+
     <TextView
         android:id="@+id/txt1"
-        android:layout_width="404dp"
+        android:layout_width="0dp"
         android:layout_height="74dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="22dp"
         android:gravity="center"
         android:text=""
         android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timer1" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="96dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="36dp"
         android:gravity="center"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn3"
+        app:layout_constraintEnd_toStartOf="@+id/btn2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txt1" />
 
     <Button
         android:id="@+id/btn2"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="60dp"
+        android:layout_marginBottom="36dp"
         android:gravity="center"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt1"
-        app:rippleColor="#9A1313"
+        app:layout_constraintBottom_toTopOf="@+id/btn4"
 
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn1"
+        app:layout_constraintTop_toTopOf="@+id/txt1"
+        app:rippleColor="#9A1313" />
 
     <Button
         android:id="@+id/btn3"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="136dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="170dp"
         android:gravity="center"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btn1" />
 
     <Button
         android:id="@+id/btn4"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="100dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="136dp"
         android:layout_marginEnd="60dp"
+        android:layout_marginBottom="170dp"
         android:gravity="center"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn3"
         app:layout_constraintTop_toTopOf="@+id/btn2" />
 
     <TextView
         android:id="@+id/timer1"
         android:layout_width="322dp"
         android:layout_height="77dp"
-        android:layout_marginTop="132dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="25dp"
         android:gravity="center"
         android:textSize="35sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txt1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtCorrect"
-        android:layout_width="100sp"
-        android:layout_height="80sp"
-        android:layout_marginStart="16dp"
+        android:layout_width="0dp"
+        android:layout_height="70sp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
-        android:textColor="#0DD315"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="18dp"
         android:gravity="center"
         android:text=""
+        android:textColor="#0DD315"
         android:textSize="40sp"
         android:textStyle="bold"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/timer1"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtWrong"
-        android:layout_width="100dp"
-        android:layout_height="73dp"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="9dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
         android:gravity="center"
         android:text=""
         android:textColor="#F40404"
         android:textSize="40sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/timer1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="136dp"
-        android:layout_height="73dp"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="25dp"
         android:text="select new level"
+        app:layout_constraintBottom_toTopOf="@+id/timer1"
         app:layout_constraintEnd_toStartOf="@+id/txtWrong"
+        app:layout_constraintStart_toEndOf="@+id/txtCorrect"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
