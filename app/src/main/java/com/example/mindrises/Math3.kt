@@ -11,6 +11,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_math1.*
 import kotlinx.android.synthetic.main.activity_math3.*
 import kotlinx.android.synthetic.main.activity_math3.btn1
 import kotlinx.android.synthetic.main.activity_math3.button2
@@ -35,7 +36,12 @@ class Math3 : AppCompatActivity() {
     var eLevel:Int=10
     var tTime:Long=10000
     var correct:Int=0
-    var numberQ=5
+    val userResult = ArrayList<MathClass1>()
+    var numberQ:Int=5
+    var image = intArrayOf(
+        R.drawable.check1,
+        R.drawable.cross,
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_math3)
@@ -89,12 +95,15 @@ class Math3 : AppCompatActivity() {
                 timer1.text = "Time finish!"
                 wrong++
                 txtWrong.text=""+wrong
-                //showCorrectButton(btnShowResult)
+                saveData("Time up","$x$z$y=$result1",image[1])
                 Handler(Looper.getMainLooper()).postDelayed({
                     setButtonColor()
                     generateQuestion(sLevel,eLevel)
                     getSomeTime(tTime)
                 }, 1000)
+                if(finishExam()){
+                    startReport()
+                }
             }
         }
         timer2.start()
@@ -112,6 +121,7 @@ class Math3 : AppCompatActivity() {
             if(a==result1){
                 correct++
                 txtCorrect.text=""+correct
+                saveData("$x$z$y=$result1","$x$z$y=$result1",image[0])
                 btn1.setBackgroundColor(Color.GREEN)
                 Handler(Looper.getMainLooper()).postDelayed({
                     btn1.setBackgroundColor(Color.BLUE)
@@ -121,16 +131,24 @@ class Math3 : AppCompatActivity() {
             }else{
                 wrong++
                 txtWrong.text=""+wrong
+                saveData("$x$z$y=$a","$x$z$y=$result1",image[1])
                 btn1.setBackgroundColor(Color.RED)
                 Handler(Looper.getMainLooper()).postDelayed({
                     setButtonColor()
                     generateQuestion(sLevel,eLevel)
                     getSomeTime(tTime)
                 }, 1000)
-
             }//end of else
             editTextNumber.setText("")
         }
+        if(finishExam()){
+            startReport()
+        }
+    }
+    //val answer: String, val correct: String,val image:Int
+    private fun saveData(answer:String,correct:String,image:Int){
+        val x=MathClass1(answer,correct,image)
+        userResult.add(x)
     }
     private fun finishExam():Boolean{
         var a:Int=0
@@ -142,5 +160,12 @@ class Math3 : AppCompatActivity() {
             b=Integer.parseInt(txtWrong.text.toString())
         }
         return a+b==numberQ
+    }
+    private fun startReport(){
+        val intent=Intent(this,Math1Result::class.java)
+        val args = Bundle()
+        args.putSerializable("userResult", userResult)
+        intent.putExtra("BUNDLE", args)
+        startActivity(intent)
     }
 }
