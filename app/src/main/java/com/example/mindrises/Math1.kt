@@ -45,6 +45,7 @@ class Math1 : AppCompatActivity() {
         button2.setOnClickListener(){
             val intent= Intent(this,Math1Level::class.java)
             this.startActivity(intent)
+            finish()
         }
         btn1.setOnClickListener(){
             var a=Integer.parseInt(btn1.text.toString())
@@ -252,7 +253,11 @@ class Math1 : AppCompatActivity() {
         if(txtWrong.text.toString()!=""){
             b=Integer.parseInt(txtWrong.text.toString())
         }
-        return a+b==numberQ
+        if(a+b==numberQ){
+            timer2.cancel()
+            return true
+        }
+        return false
     }
     private fun startReport(){
         val intent=Intent(this,Math1Result::class.java)
@@ -260,12 +265,21 @@ class Math1 : AppCompatActivity() {
         args.putSerializable("userResult", userResult)
         intent.putExtra("BUNDLE", args)
         startActivity(intent)
-    }
-    override fun onPause() {
-        super.onPause()
+        finish()
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        timer2.cancel()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer2.cancel()
     }
 }//end of class

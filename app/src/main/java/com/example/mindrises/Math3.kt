@@ -55,6 +55,7 @@ class Math3 : AppCompatActivity() {
         button2.setOnClickListener(){
             val intent= Intent(this,Math3Level::class.java)
             this.startActivity(intent)
+            finish()
         }
         btn1.setOnClickListener(){
             submit()
@@ -167,5 +168,6 @@ class Math3 : AppCompatActivity() {
         args.putSerializable("userResult", userResult)
         intent.putExtra("BUNDLE", args)
         startActivity(intent)
+        finish()
     }
 }

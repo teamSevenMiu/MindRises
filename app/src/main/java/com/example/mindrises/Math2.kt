@@ -50,6 +50,7 @@ class Math2 : AppCompatActivity() {
         button2.setOnClickListener(){
             val intent= Intent(this,Math2Level::class.java)
             this.startActivity(intent)
+            finish()
         }
         btn1.setOnClickListener(){
             var a=btnShowResult
@@ -192,5 +193,6 @@ class Math2 : AppCompatActivity() {
         args.putSerializable("userResult", userResult)
         intent.putExtra("BUNDLE", args)
         startActivity(intent)
+        finish()
     }
 }

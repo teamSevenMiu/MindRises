@@ -65,6 +65,7 @@ class Math1Level : AppCompatActivity() {
         intent.putExtra("to",to)
         intent.putExtra("tTime",tTime)
         intent.putExtra("numberQ",numberQ)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         this.startActivity(intent)
     }
 }//end of class
