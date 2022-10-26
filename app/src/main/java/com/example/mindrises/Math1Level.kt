@@ -32,7 +32,7 @@ class Math1Level : AppCompatActivity() {
                         "Forty"->40
                         "Fifty"->50
                         "Hundred"->100
-                        else-> 1000
+                        else-> 200
                     }
                 }
             }
