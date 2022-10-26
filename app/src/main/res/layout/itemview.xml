@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/image1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:src="@mipmap/ic_launcher" />
+
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:layout_gravity="left"
+        android:text="item"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+
+
+
+
+</LinearLayout>
+
+
