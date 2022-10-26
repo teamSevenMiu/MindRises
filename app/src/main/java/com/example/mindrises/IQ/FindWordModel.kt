@@ -61,7 +61,7 @@ class FindWordModel(application:Application):AndroidViewModel(application) {
         wordSelected.value=words[index].word
     }
     init {
-        createListWords()
+        //createListWords()
         //currentWord=words[index].word
 
         wordSelected.value=""
