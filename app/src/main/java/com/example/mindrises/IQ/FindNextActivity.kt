@@ -16,13 +16,13 @@ import com.example.mindrises.R
 import kotlinx.android.synthetic.main.activity_find_next.*
 
 class FindNextActivity : AppCompatActivity() {
-    var findNextModel: FindFirstModel?=null
+    var findNextModel: FindNextModel?=null
     lateinit var listButtons:ArrayList<Button>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find_next)
-        findNextModel = ViewModelProvider(this).get(FindFirstModel::class.java)
+        findNextModel = ViewModelProvider(this).get(FindNextModel::class.java)
 
         listButtons= arrayListOf(ans1,ans2,ans3,ans4)
         findNextModel!!.currentQuestion.observe(this, Observer {

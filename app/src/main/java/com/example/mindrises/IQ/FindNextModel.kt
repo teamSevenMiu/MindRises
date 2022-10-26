@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlin.random.Random
 
-class FindFirstModel:ViewModel() {
+class FindNextModel:ViewModel() {
     private var questions=ArrayList<QuestionFindFirst>()
     fun generateEasyQuestions(){
         questions.clear()

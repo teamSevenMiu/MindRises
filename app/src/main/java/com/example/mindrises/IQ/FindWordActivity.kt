@@ -12,6 +12,7 @@ import com.example.mindrises.R
 import kotlinx.android.synthetic.main.activity_find_word.*
 
 class FindWordActivity : AppCompatActivity() {
+
     var findWordModel: FindWordModel?=null
     var array:ArrayList<Button>?=null
     override fun onCreate(savedInstanceState: Bundle?) {

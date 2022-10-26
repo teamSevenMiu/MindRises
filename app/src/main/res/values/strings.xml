@@ -9,4 +9,42 @@
     <string name="previous">Previous</string>
     <string name="select_your_difficulty_level">Select your difficulty level</string>
     <string name="start_the_game">Start the game</string>
+    <array name="two_letters">
+        <item>HI</item>
+    </array>"PUT","CUT","JOB","JET","JAR","MOM","COZ"
+    <array name="three_letters">
+        <item>PUT</item>
+        <item>CUT</item>
+        <item>JET</item>
+        <item>JAR</item>
+        <item>MOM</item>
+        <item>COZ</item>
+    </array>
+    <array name="four_letters">
+        <item>BUZZ</item>
+        <item>QUIZ</item>
+        <item>JUMP</item>
+        <item>JAVA</item>
+        <item>PINK</item>
+        <item>DEAL</item>
+    </array>
+    <array name="five_letters">
+        <item>PIZZA</item>
+        <item>HELLO</item>
+        <item>EAGLE</item>
+        <item>LETTER</item>
+        <item>OCEAN</item>
+    </array>
+    <array name="others">
+        <item>RESPONSE</item>
+        <item>FRIENDLY</item>
+        <item>FRIENDS</item>
+        <item>IMPLANT</item>
+        <item>MINIMIZE</item>
+        <item>RECEIVED</item>
+        <item>ABSOLUTE</item>
+        <item>ILLEGAL</item>
+        <item>EXCHANGE</item>
+        <item>MATERIAL</item>
+    </array>
 </resources>

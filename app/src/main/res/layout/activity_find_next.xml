@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".IQ.FindNextActivity">
-
+    <TextView
+        android:id="@+id/total_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:text="score:"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/t_size2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/nb_correct"
@@ -31,17 +41,7 @@
         app:layout_constraintStart_toEndOf="@+id/nb_correct"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/total_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:text="score:"
-        android:textColor="@color/blue"
-        android:textSize="@dimen/t_size2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout"
