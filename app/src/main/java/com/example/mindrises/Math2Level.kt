@@ -6,68 +6,35 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_math2_level.*
 
 class Math2Level : AppCompatActivity() {
+    var numberQ:Int=5
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_math2_level)
         mg1.setOnClickListener(){
-            var from=1
-            var to=5
-            var tTime:Long=5000
-            val intent= Intent(this,Math2::class.java)
-            intent.putExtra("from",from)
-            intent.putExtra("to",to)
-            intent.putExtra("tTime",tTime)
-            this.startActivity(intent)
+            showMath2(1,5,5000,numberQ)
         }
         mg2.setOnClickListener(){
-            var from=6
-            var to=10
-            var tTime:Long=10000
-            val intent= Intent(this,Math2::class.java)
-            intent.putExtra("from",from)
-            intent.putExtra("to",to)
-            intent.putExtra("tTime",tTime)
-            this.startActivity(intent)
+            showMath2(6,10,10000,numberQ)
         }
         mg3.setOnClickListener(){
-            var from=11
-            var to=15
-            var tTime:Long=15000
-            val intent= Intent(this,Math2::class.java)
-            intent.putExtra("from",from)
-            intent.putExtra("to",to)
-            intent.putExtra("tTime",tTime)
-            this.startActivity(intent)
+            showMath2(11,15,15000,numberQ)
         }
         mg4.setOnClickListener(){
-            var from=16
-            var to=20
-            var tTime:Long=20000
-            val intent= Intent(this,Math2::class.java)
-            intent.putExtra("from",from)
-            intent.putExtra("to",to)
-            intent.putExtra("tTime",tTime)
-            this.startActivity(intent)
+            showMath2(16,20,20000,numberQ)
         }
         mg5.setOnClickListener(){
-            var from=21
-            var to=30
-            var tTime:Long=25000
-            val intent= Intent(this,Math2::class.java)
-            intent.putExtra("from",from)
-            intent.putExtra("to",to)
-            intent.putExtra("tTime",tTime)
-            this.startActivity(intent)
+            showMath2(21,30,25000,numberQ)
         }
         mg6.setOnClickListener(){
-            var from=1
-            var to=100
-            var tTime:Long=35000
-            val intent= Intent(this,Math2::class.java)
-            intent.putExtra("from",from)
-            intent.putExtra("to",to)
-            intent.putExtra("tTime",tTime)
-            this.startActivity(intent)
+            showMath2(31,100,35000,numberQ)
         }
+    }
+    private fun showMath2(from:Int,to:Int,tTime:Long,numberQ:Int){
+        val intent= Intent(this,Math2::class.java)
+        intent.putExtra("from",from)
+        intent.putExtra("to",to)
+        intent.putExtra("tTime",tTime)
+        intent.putExtra("numberQ",numberQ)
+        this.startActivity(intent)
     }
 }

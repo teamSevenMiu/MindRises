@@ -9,4 +9,16 @@
     <string name="previous">Previous</string>
     <string name="select_your_difficulty_level">Select your difficulty level</string>
     <string name="start_the_game">Start the game</string>
+    <string-array name="numbers">
+        <item>Five</item>
+        <item>Ten</item>
+        <item>Fifteen</item>
+        <item>Twenty</item>
+        <item>Twenty-Five</item>
+        <item>Thirty</item>
+        <item>Thirty-Five</item>
+        <item>Forty</item>
+        <item>Fifty</item>
+        <item>Hundred</item>
+    </string-array>
 </resources>

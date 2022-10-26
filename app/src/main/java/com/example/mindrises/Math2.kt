@@ -31,12 +31,14 @@ class Math2 : AppCompatActivity() {
     var eLevel:Int=10
     var tTime:Long=10000
     var correct:Int=0
+    var numberQ=5
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_math2)
         sLevel=intent.getIntExtra("from",1)
         eLevel=intent.getIntExtra("to",10)
         tTime=intent.getLongExtra("tTime",10000)
+        numberQ=intent.getIntExtra("numberQ",5)
         generateQuestion(sLevel,eLevel)
         setButtonColor()
         getSomeTime(tTime)
@@ -148,5 +150,16 @@ class Math2 : AppCompatActivity() {
             1->  btn1.setBackgroundColor(Color.GREEN)
             2->  btn2.setBackgroundColor(Color.GREEN)
         }
+    }
+    private fun finishExam():Boolean{
+        var a:Int=0
+        var b:Int=0
+        if(txtCorrect.text.toString()!=""){
+            a=Integer.parseInt(txtCorrect.text.toString())
+        }
+        if(txtWrong.text.toString()!=""){
+            b=Integer.parseInt(txtWrong.text.toString())
+        }
+        return a+b==numberQ
     }
 }

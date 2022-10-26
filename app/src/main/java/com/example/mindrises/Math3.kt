@@ -12,8 +12,13 @@ import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_math3.*
+import kotlinx.android.synthetic.main.activity_math3.btn1
+import kotlinx.android.synthetic.main.activity_math3.button2
+import kotlinx.android.synthetic.main.activity_math3.timer1
+import kotlinx.android.synthetic.main.activity_math3.txt1
+import kotlinx.android.synthetic.main.activity_math3.txtCorrect
+import kotlinx.android.synthetic.main.activity_math3.txtWrong
 import kotlin.random.Random
-
 
 class Math3 : AppCompatActivity() {
     var x:Int=1
@@ -30,12 +35,14 @@ class Math3 : AppCompatActivity() {
     var eLevel:Int=10
     var tTime:Long=10000
     var correct:Int=0
+    var numberQ=5
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_math3)
         sLevel=intent.getIntExtra("from",1)
         eLevel=intent.getIntExtra("to",10)
         tTime=intent.getLongExtra("tTime",10000)
+        numberQ=intent.getIntExtra("numberQ",5)
         generateQuestion(sLevel,eLevel)
         setButtonColor()
         getSomeTime(tTime)
@@ -125,5 +132,15 @@ class Math3 : AppCompatActivity() {
             editTextNumber.setText("")
         }
     }
-
+    private fun finishExam():Boolean{
+        var a:Int=0
+        var b:Int=0
+        if(txtCorrect.text.toString()!=""){
+            a=Integer.parseInt(txtCorrect.text.toString())
+        }
+        if(txtWrong.text.toString()!=""){
+            b=Integer.parseInt(txtWrong.text.toString())
+        }
+        return a+b==numberQ
+    }
 }

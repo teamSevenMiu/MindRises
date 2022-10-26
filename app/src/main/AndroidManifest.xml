@@ -13,6 +13,20 @@
         android:theme="@style/Theme.MindRises"
         tools:targetApi="31">
         <activity
+            android:name=".Math1DetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Math1Result"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Math3Level"
             android:exported="false">
             <meta-data
@@ -26,7 +40,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".Math1Level"
             android:exported="false">
@@ -55,7 +68,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".JigsawActivity"
             android:exported="false"

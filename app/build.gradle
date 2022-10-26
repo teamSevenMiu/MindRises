@@ -50,4 +50,10 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // Recycler View Dependency
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    // CardView Dependency
+    implementation 'androidx.cardview:cardview:1.0.0'
+    //Getting Image in a Circular View
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
 }
