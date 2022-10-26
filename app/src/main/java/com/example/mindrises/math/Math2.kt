@@ -136,7 +136,15 @@ class Math2 : AppCompatActivity() {
             1->txt1.text=txt1.text.toString()+result1
             2->txt1.text=txt1.text.toString()+result2
         }
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
     }//end of function
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 
     private fun getSomeTime(x:Long){
         timer2= object : CountDownTimer(x, 1000) {

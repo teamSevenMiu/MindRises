@@ -22,5 +22,13 @@ class Math1Result : AppCompatActivity() {
         recyclerView1.adapter = adapter
 
         konfettiView.start(Presets.rain())
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
+    }//end of function
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

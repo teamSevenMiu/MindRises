@@ -59,7 +59,16 @@ class Math1Level : AppCompatActivity() {
         mg6.setOnClickListener(){
             showMath1(31,100,35000,numberQ)
         }
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
+    }//end of function
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
+
     private fun showMath1(from:Int,to:Int,tTime:Long,numberQ:Int){
         val intent= Intent(this, Math1::class.java)
         intent.putExtra("from",from)

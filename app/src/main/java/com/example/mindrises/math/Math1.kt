@@ -200,7 +200,17 @@ class Math1 : AppCompatActivity() {
                 btn4.text="$result1"
             }
         }
+
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
     }//end of function
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
 
     private fun getSomeTime(time:Long){
         timer2= object : CountDownTimer(time, 1000) {

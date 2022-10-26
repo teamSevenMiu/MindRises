@@ -18,5 +18,13 @@ class Math1DetailActivity : AppCompatActivity() {
             textView5.text = your
             imageView2.setImageResource(image)
         }
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
+    }//end of function
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

@@ -108,7 +108,16 @@ class Math3 : AppCompatActivity() {
             }
         }
         timer2.start()
-    }//end of time function
+
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
+    }//end of function
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 
     private fun setButtonColor(){
         btn1.setBackgroundColor(Color.BLUE)
