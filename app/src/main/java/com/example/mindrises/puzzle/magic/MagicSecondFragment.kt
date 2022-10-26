@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.puzzle.magic
 
 import android.graphics.Color
 import androidx.lifecycle.ViewModelProvider
@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.core.view.isVisible
 import com.example.mindrises.databinding.FragmentMagicSecondBinding
+import com.example.mindrises.main.Presets
 import com.google.android.material.snackbar.Snackbar
 import java.util.ArrayList
 
@@ -31,6 +33,13 @@ class MagicSecondFragment : Fragment() {
         viewModel.matrixSize = size
         _binding = FragmentMagicSecondBinding.inflate(inflater, container, false)
 
+        viewModel.count.observe(viewLifecycleOwner){
+            binding.value.text = it.toString()
+        }
+
+        binding.reset.setOnClickListener {
+            reset()
+        }
 
         initGame()
 
@@ -40,13 +49,26 @@ class MagicSecondFragment : Fragment() {
 
     private fun initGame() {
 
+        viewModel.count.value = 0
+        binding.konfettiView.stopGracefully()
+        binding.reset.isVisible = false
         buttons = mutableListOf<Button>()
-        binding.container.removeAllViews()
         viewModel.initGame { position ->
             val button = createButton(position.y, position.x, position.id)
             buttons.add(button)
             binding.container.addView(button)
         }
+    }
+
+    private fun reset() {
+
+        (1..viewModel.matrixSize * viewModel.matrixSize).forEach {
+            val button = binding.container.findViewById<Button>(it)
+            binding.container.removeView(button)
+        }
+
+        initGame()
+
     }
 
     private fun createButton(x: Float, y: Float, id: Int): Button {
@@ -84,18 +106,29 @@ class MagicSecondFragment : Fragment() {
 
         if (viewModel.move(current,target)) {
 
-            currentButton.animate().xBy(current.x).yBy(current.y).start()
+            currentButton.animate().xBy(current.x).yBy(current.y).withEndAction{
+                button.translationX = target.x
+                button.translationY = target.y
+                gameOverCheck()
+            }.start()
 
-            button.translationX = target.x
-            button.translationY = target.y
+
 
         }
+    }
 
-        if (check()) {
-            val snack = Snackbar.make(binding.container,"Congratulations ! You have Completed the magic SQUARE",
-                Snackbar.LENGTH_LONG)
-            snack.show()
-        }
+    private fun gameOverCheck(){
+
+        if (check() == false) { return }
+
+        binding.reset.isVisible = true
+        binding.reset.bringToFront()
+        binding.konfettiView.start(Presets.rain())
+
+        val snack = Snackbar.make(binding.parentContainer,"Congratulations ! You have Completed the magic SQUARE",
+            Snackbar.LENGTH_LONG)
+        snack.show()
+
     }
 
     private fun check(): Boolean {
@@ -104,7 +137,7 @@ class MagicSecondFragment : Fragment() {
 
         (1..viewModel.matrixSize * viewModel.matrixSize).forEach {
             val button = binding.container.findViewById<Button>(it)
-            positions.add(MagicPosition(button.x,button.y))
+            positions.add(MagicPosition(button.x ,button.y))
         }
 
         return viewModel.check(positions)

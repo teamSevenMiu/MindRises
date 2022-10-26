@@ -1,14 +1,10 @@
-package com.example.mindrises
+package com.example.mindrises.puzzle.magic
 
-import android.graphics.Color
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.mindrises.databinding.ActivityMagicBinding
-import com.google.android.material.snackbar.Snackbar
-import java.util.*
 
 class MagicActivity : AppCompatActivity() {
 

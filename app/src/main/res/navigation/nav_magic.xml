@@ -26,7 +26,7 @@ app:startDestination="@id/MagicFirstFragment">
 </fragment>
 <fragment
     android:id="@+id/MagicSecondFragment"
-    android:name="com.example.mindrises.MagicSecondFragment"
+    android:name="com.example.mindrises.puzzle.magic.MagicSecondFragment"
     android:label="@string/title_activity_magic"
     tools:layout="@layout/fragment_magic_second">
 

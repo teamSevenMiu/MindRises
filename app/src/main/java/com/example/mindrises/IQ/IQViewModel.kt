@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.IQ
 
 import androidx.lifecycle.ViewModel
 

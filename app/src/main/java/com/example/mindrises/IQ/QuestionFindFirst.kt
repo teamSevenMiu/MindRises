@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.IQ
 
 data class QuestionFindFirst(
                              var val1:String,var val2:String,var val3:String,var val4:String,
