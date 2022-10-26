@@ -76,8 +76,10 @@ class JigsawFirstAdapter(var fragment:Fragment,var context: Context, var list: A
 
         holder.itemView.setOnClickListener {
 
+
             val asset = list[position].name
-            val bundle = bundleOf("asset" to asset)
+            val piece = list[position].piece
+            val bundle = bundleOf("asset" to asset, "piece" to piece)
             fragment.findNavController().navigate(R.id.action_jigsaw_first_second, bundle)
         }
     }

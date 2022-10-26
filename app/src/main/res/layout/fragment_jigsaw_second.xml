@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".puzzle.jigsaw.JigsawSecondFragment">
+    tools:context=".puzzle.jigsaw.JigsawSecondFragment"
+    android:id="@+id/parentContainer">
 
     <ImageView
         android:id="@+id/imageView"
@@ -23,6 +24,24 @@
         tools:ignore="ImageContrastCheck"
         android:contentDescription="imageView" />
 
+    <Button
+        android:id="@+id/reset"
+        android:alpha="0.5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        android:text="Play Again"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintDimensionRatio="H,4:4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <RelativeLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -32,6 +51,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
     </RelativeLayout>
+
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

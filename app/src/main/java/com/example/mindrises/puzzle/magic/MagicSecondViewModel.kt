@@ -1,6 +1,8 @@
 package com.example.mindrises.puzzle.magic
 
 import android.content.res.Resources
+import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import java.util.ArrayList
 
@@ -10,6 +12,7 @@ class MagicSecondViewModel : ViewModel() {
     var offsetX = 80;
     var offsetY = 200;
     var matrixSize = 4
+    var count:MutableLiveData<Int> = MutableLiveData(0)
 
     val buttonSize:Int
          get() = (width - (offsetX * 2)) / matrixSize
@@ -26,8 +29,10 @@ class MagicSecondViewModel : ViewModel() {
             l2.add(it)
         }
 
-        l1.shuffle()
-        l2.shuffle()
+        if (matrixSize > 2){
+            l1.shuffle()
+            l2.shuffle()
+        }
 
         var id = 1
         l1.forEach { x ->
@@ -60,6 +65,9 @@ class MagicSecondViewModel : ViewModel() {
             current.y = nextPC.y
             target.x = target.x + nextPN.x
             target.y = target.y + nextPN.y
+
+            count.value = (count.value ?: 0) + 1
+
             return true
 
         } else {
@@ -82,6 +90,8 @@ class MagicSecondViewModel : ViewModel() {
 
                 val yCheckL = positions[index].y
                 val yCheckR = (i * buttonSize.toFloat()) + offsetY
+
+                Log.i("Check +++","$xCheckL == $xCheckR || $yCheckL == $yCheckR")
 
                 if (xCheckL != xCheckR || yCheckL != yCheckR) {
                     b = false
