@@ -36,7 +36,6 @@ class Math1Level : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 TODO("Not yet implemented")
             }
@@ -68,5 +67,5 @@ class Math1Level : AppCompatActivity() {
         intent.putExtra("numberQ",numberQ)
         this.startActivity(intent)
     }
-}
+}//end of class
 

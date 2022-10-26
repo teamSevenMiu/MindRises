@@ -3,13 +3,19 @@ package com.example.mindrises
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_math3_level.*
+import kotlinx.android.synthetic.main.activity_math3_level.mg1
+import kotlinx.android.synthetic.main.activity_math3_level.mg2
+import kotlinx.android.synthetic.main.activity_math3_level.mg3
+import kotlinx.android.synthetic.main.activity_math3_level.mg4
+import kotlinx.android.synthetic.main.activity_math3_level.mg5
+import kotlinx.android.synthetic.main.activity_math3_level.mg6
 
 class Math3Level : AppCompatActivity() {
     var numberQ:Int=5
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_math3_level)
+
         mg1.setOnClickListener(){
             showMath3(1,5,5000,numberQ)
         }

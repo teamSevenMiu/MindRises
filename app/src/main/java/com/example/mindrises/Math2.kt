@@ -32,6 +32,11 @@ class Math2 : AppCompatActivity() {
     var tTime:Long=10000
     var correct:Int=0
     var numberQ=5
+    val userResult = ArrayList<MathClass1>()
+    var image = intArrayOf(
+        R.drawable.check1,
+        R.drawable.cross,
+    )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_math2)
@@ -53,6 +58,7 @@ class Math2 : AppCompatActivity() {
                 correct++
                 txtCorrect.text=""+correct
                 btn1.setBackgroundColor(Color.GREEN)
+                saveData("$x$z$y=$result1","$x$z$y=$result1",image[0])
                 Handler(Looper.getMainLooper()).postDelayed({
                     btn1.setBackgroundColor(Color.BLUE)
                     generateQuestion(sLevel,eLevel)
@@ -61,6 +67,7 @@ class Math2 : AppCompatActivity() {
             }else{
                 wrong++
                 txtWrong.text=""+wrong
+                saveData("$x$z$y=$a","$x$z$y=$result1",image[1])
                 btn1.setBackgroundColor(Color.RED)
                 showCorrectButton(btnShowResult)
                 Handler(Looper.getMainLooper()).postDelayed({
@@ -69,14 +76,18 @@ class Math2 : AppCompatActivity() {
                     getSomeTime(tTime)
                 }, 1000)
             }
+            if(finishExam()){
+                startReport()
+            }
         }
         btn2.setOnClickListener(){
             var a=btnShowResult
             timer2.cancel()
-            if(a!=1){
+            if(a==2){
                 correct++
                 txtCorrect.text=""+correct
                 btn2.setBackgroundColor(Color.GREEN)
+                saveData("$x$z$y=$result1","$x$z$y=$result1",image[0])
                 Handler(Looper.getMainLooper()).postDelayed({
                     btn2.setBackgroundColor(Color.BLUE)
                     generateQuestion(sLevel,eLevel)
@@ -87,11 +98,15 @@ class Math2 : AppCompatActivity() {
                 txtWrong.text=""+wrong
                 btn2.setBackgroundColor(Color.RED)
                 showCorrectButton(btnShowResult)
+                saveData("$x$z$y=$a","$x$z$y=$result1",image[1])
                 Handler(Looper.getMainLooper()).postDelayed({
                     setButtonColor()
                     generateQuestion(sLevel,eLevel)
                     getSomeTime(tTime)
                 }, 1000)
+            }
+            if(finishExam()){
+                startReport()
             }
         }
     }
@@ -113,7 +128,7 @@ class Math2 : AppCompatActivity() {
             "-"->x-y
             else-> 0
         }
-        result2=Random.nextInt((result1+1),(result1+3))
+        result2=result1+1
         btnShowResult= Random.nextInt(1,3)
         when(btnShowResult){
             1->txt1.text=txt1.text.toString()+result1
@@ -131,11 +146,15 @@ class Math2 : AppCompatActivity() {
                 wrong++
                 txtWrong.text=""+wrong
                 showCorrectButton(btnShowResult)
+                saveData("Time up","$x$z$y=$result1",image[1])
                 Handler(Looper.getMainLooper()).postDelayed({
                     setButtonColor()
                     generateQuestion(sLevel,eLevel)
                     getSomeTime(tTime)
                 }, 1000)
+                if(finishExam()){
+                    startReport()
+                }
             }
         }
         timer2.start()
@@ -161,5 +180,17 @@ class Math2 : AppCompatActivity() {
             b=Integer.parseInt(txtWrong.text.toString())
         }
         return a+b==numberQ
+    }
+    //val answer: String, val correct: String,val image:Int
+    private fun saveData(answer:String,correct:String,image:Int){
+        val x=MathClass1(answer,correct,image)
+        userResult.add(x)
+    }
+    private fun startReport(){
+        val intent=Intent(this,Math1Result::class.java)
+        val args = Bundle()
+        args.putSerializable("userResult", userResult)
+        intent.putExtra("BUNDLE", args)
+        startActivity(intent)
     }
 }
