@@ -11,6 +11,7 @@ import kotlin.math.abs
 
 class JigsawTouchListener : OnTouchListener {
 
+    lateinit var gameOverCheck: () -> Unit
     private var xDelta = 0f
     private var yDelta = 0f
 
@@ -57,6 +58,7 @@ class JigsawTouchListener : OnTouchListener {
                     piece.setLayoutParams(lParams)
                     piece.canMove = false
                     sendViewToBack(piece)
+                    gameOverCheck()
                 }
             }
         }

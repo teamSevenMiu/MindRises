@@ -10,16 +10,22 @@ import androidx.lifecycle.ViewModel
 import java.io.IOException
 import java.util.*
 import kotlin.math.roundToInt
+import kotlin.math.sqrt
 
 class JigsawSecondViewModel: ViewModel() {
 
+    var pieceCount = 4
     var pieces: ArrayList<JigsawPiece> = ArrayList()
+    lateinit var gameOver: () -> Unit
 
     fun setupPeices(layout:RelativeLayout,imageView: ImageView,context: Context, asset:String){
 
         setPicFromAsset(context,asset, imageView)
         pieces = splitImage(imageView,context)!!
         val touchListener = JigsawTouchListener()
+        touchListener.gameOverCheck = {
+            checkGameOver()
+        }
         // shuffle pieces order
         Collections.shuffle(pieces)
 
@@ -64,9 +70,9 @@ class JigsawSecondViewModel: ViewModel() {
     }
 
     private fun splitImage(imageView: ImageView,context: Context): ArrayList<JigsawPiece>? {
-        val piecesNumber = 4
-        val rows = 2
-        val cols = 2
+        val piecesNumber = pieceCount
+        val rows = sqrt(pieceCount.toDouble()).toInt()
+        val cols = sqrt(pieceCount.toDouble()).toInt()
         val pieces: ArrayList<JigsawPiece> = ArrayList<JigsawPiece>(piecesNumber)
 
         // Get the scaled bitmap of the source image
@@ -284,7 +290,7 @@ class JigsawSecondViewModel: ViewModel() {
 
     fun checkGameOver() {
         if (isGameOver()) {
-
+            gameOver()
         }
     }
 
