@@ -1,46 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".IQFragment">
-
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
-
-        <ImageButton
-            android:id="@+id/startFind"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:text="start exercise"
-            android:src="@drawable/series"
-
-            />
-
-        <ImageButton
-            android:id="@+id/findWord"
-            android:layout_width="wrap_content"
-            android:layout_height="216dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:src="@drawable/words2"
-            android:text="Find Word" />
-        <ImageButton
-            android:id="@+id/playMusic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_margin="10dp"
-            android:text="Play Music"
-android:src="@drawable/beethoven"
-            />
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
