@@ -5,26 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".IQ.FindWordActivity">
+    <TextView
+        android:id="@+id/total_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:text="score:"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/t_size2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <TextView
+        android:id="@+id/nb_correct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        android:textSize="@dimen/t_size2"
+        android:textColor="@color/green"
+        app:layout_constraintStart_toEndOf="@+id/total_score"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nb_wrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:textSize="@dimen/t_size2"
+        android:text="0"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toEndOf="@+id/nb_correct"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="93dp"
+        android:gravity="center"
+        android:textSize="@dimen/t_size3"
+        android:text="Find The word"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:columnCount="5"
+
         android:orientation="horizontal"
+        android:rowCount="5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/view">
 
         <Button
             android:id="@+id/letter1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="10dp"
-            android:text="S"
             android:onClick="selectChar"
-            android:textSize="@dimen/t_size2"
+            android:text="S"
+            android:textSize="@dimen/t_size4"
             tools:layout_editor_absoluteX="125dp" />
 
         <Button
@@ -32,9 +93,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="10dp"
-            android:text="B"
             android:onClick="selectChar"
-            android:textSize="@dimen/t_size2"
+            android:text="B"
+            android:textSize="@dimen/t_size4"
             tools:layout_editor_absoluteX="125dp" />
 
         <Button
@@ -42,9 +103,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="10dp"
-            android:text="L"
             android:onClick="selectChar"
-            android:textSize="@dimen/t_size2"
+            android:text="L"
+            android:textSize="@dimen/t_size4"
             tools:layout_editor_absoluteX="125dp" />
 
         <Button
@@ -52,9 +113,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="10dp"
-            android:text="E"
             android:onClick="selectChar"
-            android:textSize="@dimen/t_size2"
+            android:text="E"
+            android:textSize="@dimen/t_size4"
             tools:layout_editor_absoluteX="125dp" />
 
         <Button
@@ -62,9 +123,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="10dp"
-            android:text="O"
             android:onClick="selectChar"
-            android:textSize="@dimen/t_size2"
+            android:text="O"
+            android:textSize="@dimen/t_size4"
             tools:layout_editor_absoluteX="125dp" />
 
         <Button
@@ -72,9 +133,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="10dp"
-            android:text="U"
             android:onClick="selectChar"
-            android:textSize="@dimen/t_size2"
+            android:text="U"
+            android:textSize="@dimen/t_size4"
             tools:layout_editor_absoluteX="125dp" />
 
         <Button
@@ -83,9 +144,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minWidth="10dp"
-            android:text="T"
             android:onClick="selectChar"
-            android:textSize="@dimen/t_size2"
+            android:text="T"
+            android:textSize="@dimen/t_size4"
             tools:layout_editor_absoluteX="125dp" />
 
         <Button
@@ -94,32 +155,160 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:minWidth="10dp"
-            android:text="A"
             android:onClick="selectChar"
-            android:textSize="@dimen/t_size2"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
             tools:layout_editor_absoluteX="125dp" />
 
-        <ImageButton
-            android:id="@+id/refresh"
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="retry"
-            app:srcCompat="@drawable/refresh" />
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:clickable="false"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+
+            android:text="a"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="5dp"
+            android:onClick="selectChar"
+            android:text="A"
+
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minWidth="10dp"
+            android:onClick="selectChar"
+            android:text="A"
+            android:textSize="@dimen/t_size4"
+            tools:layout_editor_absoluteX="125dp" />
 
 
-    </LinearLayout>
+    </GridLayout>
+
+    <ImageButton
+        android:id="@+id/refresh"
+        android:layout_width="111dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="36dp"
+        android:layout_weight="1"
+        android:onClick="retry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selected_word"
+        app:srcCompat="@drawable/refresh" />
 
     <TextView
         android:id="@+id/selected_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="28dp"
         android:text="ABSOLUTE"
         android:textSize="@dimen/t_size4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
