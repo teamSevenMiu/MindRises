@@ -47,4 +47,17 @@
         <item>EXCHANGE</item>
         <item>MATERIAL</item>
     </array>
+    <string-array name="numbers">
+        <item>Five</item>
+        <item>Ten</item>
+        <item>Fifteen</item>
+        <item>Twenty</item>
+        <item>Twenty-Five</item>
+        <item>Thirty</item>
+        <item>Thirty-Five</item>
+        <item>Forty</item>
+        <item>Fifty</item>
+        <item>Hundred</item>
+        <item>Two-Hundred</item>
+    </string-array>
 </resources>
