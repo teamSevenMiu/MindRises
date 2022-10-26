@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.IQ
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -10,14 +10,13 @@ import android.os.Looper
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.mindrises.R
 import kotlinx.android.synthetic.main.activity_find_next.*
-import kotlinx.android.synthetic.main.activity_math1.*
 
 class FindNextActivity : AppCompatActivity() {
-    var findNextModel:FindFirstModel?=null
+    var findNextModel: FindFirstModel?=null
     lateinit var listButtons:ArrayList<Button>
 
     override fun onCreate(savedInstanceState: Bundle?) {

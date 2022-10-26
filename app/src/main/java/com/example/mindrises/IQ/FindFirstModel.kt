@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.IQ
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

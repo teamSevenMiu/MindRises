@@ -31,21 +31,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".PlayMusicActivity"
+            android:name=".IQ.PlayMusicActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".FindWordActivity"
+            android:name=".IQ.FindWordActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".FindNextActivity"
+            android:name=".IQ.FindNextActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

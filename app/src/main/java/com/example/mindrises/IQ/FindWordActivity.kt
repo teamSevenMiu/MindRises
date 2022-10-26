@@ -1,4 +1,4 @@
-package com.example.mindrises
+package com.example.mindrises.IQ
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,10 +8,11 @@ import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.mindrises.R
 import kotlinx.android.synthetic.main.activity_find_word.*
 
 class FindWordActivity : AppCompatActivity() {
-    var findWordModel:FindWordModel?=null
+    var findWordModel: FindWordModel?=null
     var array:ArrayList<Button>?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
