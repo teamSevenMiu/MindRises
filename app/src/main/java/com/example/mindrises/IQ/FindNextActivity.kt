@@ -43,7 +43,16 @@ class FindNextActivity : AppCompatActivity() {
             nb_wrong.text=it.toString()
         })
         val intent=getIntent()
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
     fun disableButtons(){
         listButtons.forEach {
             it.isClickable=false

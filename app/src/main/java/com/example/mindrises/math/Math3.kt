@@ -169,7 +169,11 @@ class Math3 : AppCompatActivity() {
         if(txtWrong.text.toString()!=""){
             b=Integer.parseInt(txtWrong.text.toString())
         }
-        return a+b==numberQ
+        if(a+b==numberQ){
+            timer2.cancel()
+            return true
+        }
+        return false
     }
     private fun startReport(){
         val intent=Intent(this, Math1Result::class.java)
@@ -178,5 +182,15 @@ class Math3 : AppCompatActivity() {
         intent.putExtra("BUNDLE", args)
         startActivity(intent)
         finish()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        timer2.cancel()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer2.cancel()
     }
 }

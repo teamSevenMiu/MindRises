@@ -53,6 +53,14 @@ class PlayMusicActivity : AppCompatActivity() {
             nb_wrong_game3.text=it.toString()
         })
 
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
     fun disableButtons(){
         buttons.forEach {

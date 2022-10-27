@@ -57,6 +57,14 @@ class FindWordActivity : AppCompatActivity() {
         })
         val intent=getIntent()
 
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     //the buttons to be shown in the screen

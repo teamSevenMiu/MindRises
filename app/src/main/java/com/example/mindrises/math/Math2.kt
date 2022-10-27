@@ -189,7 +189,11 @@ class Math2 : AppCompatActivity() {
         if(txtWrong.text.toString()!=""){
             b=Integer.parseInt(txtWrong.text.toString())
         }
-        return a+b==numberQ
+        if(a+b==numberQ){
+            timer2.cancel()
+            return true
+        }
+        return false
     }
     //val answer: String, val correct: String,val image:Int
     private fun saveData(answer:String,correct:String,image:Int){
@@ -203,5 +207,14 @@ class Math2 : AppCompatActivity() {
         intent.putExtra("BUNDLE", args)
         startActivity(intent)
         finish()
+    }
+    override fun onStop() {
+        super.onStop()
+        timer2.cancel()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        timer2.cancel()
     }
 }
