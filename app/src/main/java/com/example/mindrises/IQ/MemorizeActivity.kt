@@ -13,10 +13,9 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.mindrises.R
-import kotlinx.android.synthetic.main.activity_find_next.*
 import kotlinx.android.synthetic.main.activity_play_music.*
 
-class PlayMusicActivity : AppCompatActivity() {
+class MemorizeActivity : AppCompatActivity() {
     var list= arrayListOf<Int>(0,2,5)
     var patterModel:PatterModel?=null
     var nb_selected_buttons=0
@@ -25,7 +24,7 @@ class PlayMusicActivity : AppCompatActivity() {
     fun patternCompleted():Boolean {return nb_selected_buttons==list.size}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_play_music)
+        setContentView(R.layout.activity_memorize)
         //buttonMusic.put(note1,MediaPlayer.create(this, R.raw.note1))
         buttons.add(note1)
         buttons.add(note2)

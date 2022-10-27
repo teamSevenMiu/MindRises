@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,12 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mindrises.IQ.FindNextActivity
 import com.example.mindrises.IQ.FindWordActivity
 import com.example.mindrises.IQ.IQViewModel
-import com.example.mindrises.IQ.PlayMusicActivity
+import com.example.mindrises.IQ.MemorizeActivity
 import com.example.mindrises.databinding.FragmentIqBinding
 import com.example.mindrises.databinding.ItemPuzzleBinding
-import com.example.mindrises.puzzle.jigsaw.JigsawActivity
-import com.example.mindrises.puzzle.magic.MagicActivity
-import kotlinx.android.synthetic.main.fragment_iq.view.*
 
 class IQFragment : Fragment() {
     private var _binding: FragmentIqBinding? = null
@@ -104,7 +100,7 @@ class IQAdapter(var context: Context, var list: ArrayList<PuzzleItem>) : Recycle
                 context.startActivity(intent)
             }
             if (position == 2){
-                val intent = Intent(context, PlayMusicActivity::class.java)
+                val intent = Intent(context, MemorizeActivity::class.java)
                 context.startActivity(intent)
             }
 

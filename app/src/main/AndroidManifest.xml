@@ -87,7 +87,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".IQ.PlayMusicActivity"
+            android:name=".IQ.MemorizeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
